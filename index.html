@@ -17,9 +17,14 @@
     <!-- Custom CSS -->
     <link href="css/blog-post.css" rel="stylesheet">
     <link href="css/mystyle.css" rel="stylesheet" media="screen">  
+ <!--  <link rel="stylesheet" href="jQuery-Calendar-Plugin-Using-HTML-Templates-CLNDR-js/demo/css/clndr.css">  календар -->
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <!-- погода-->
+
 
 </head>
 
@@ -138,20 +143,20 @@
                         <img class="media-object" src="http://placehold.it/64x64" alt="">
                     </a>
                     <div class="media-body">
-                        <h4 class="media-heading">Start Bootstrap
+                        <h4 class="media-heading">Answer 1
                             <small>August 25, 2014 at 9:30 PM</small>
                         </h4>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        ...
                         <!-- Nested Comment -->
                         <div class="media">
                             <a class="pull-left" href="#">
                                 <img class="media-object" src="http://placehold.it/64x64" alt="">
                             </a>
                             <div class="media-body">
-                                <h4 class="media-heading">Nested Start Bootstrap
+                                <h4 class="media-heading">Answer 1.1
                                     <small>August 25, 2014 at 9:30 PM</small>
                                 </h4>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                .....
                             </div>
                         </div>
                         <!-- End Nested Comment -->
@@ -164,12 +169,28 @@
 <div class="col-md-4">
 
                
+
+
             <div class="well alert alert-success">
                     <h4>Тут хочу календар</h4>
-                    
-            </div>
 
-                
+                      <div class="container">
+                    <div class="cal1"></div>
+                    <div class="cal2">
+                    <script type="text/template" id="template-calendar"></script>
+                    </div>
+        
+             </div>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="jQuery-Calendar-Plugin-Using-HTML-Templates-CLNDR-js/src/clndr.js"></script>
+    <script src="jQuery-Calendar-Plugin-Using-HTML-Templates-CLNDR-js/demo/demo.js"></script>
+
+
+
     <div class="well alert alert-success">
                     <h4>Курс валют</h4>
              <div class="row">
@@ -202,29 +223,74 @@
 								    <li><a href="#">Харків</a></li>
     							</ul>
  				 		</div>
-				</div>
 
-</div>
+<select id = "cityid">
+    <option value "707471">Івано-Франківськ</option>
+    <option value "702550">Львів</option>
+    <option value "696050">Київ</option>
+    <option value "706483">Харків</option>
+</select> 
+<div id="content"></div>
 
-            
+<script type="text/javascript">
+    var content = document.getElementById("content");
+    function request(){
+            var URL ="http://api.openweathermap.org/data/2.5/weather?id=";
+            var CITY_ID = "3941584";
+            var API_KEY = "9c6ba711b6703f11361b5498e2ccac46";
+            var REQ_URL = URL+CITY_ID+"&appid="+API_KEY;
+            var RESP;
+
+
+            var XHR = new XMLHttpRequest(); // прийом ріквесту  readystate=0
+            XHR.open("Get",REQ_URL,true);  //true асинхронно  =1
+
+                //відправляємо
+            XHR.send(); // =2
+
+            //ловимо відповідь
+
+            XHR.onreadystatechange=function(){
+                if ((XHR.readyState == 4)&&(XHR.status == 200)){
+                    RESP=JSON.parse(XHR.responseText);
+                    //робимо дом
+                    content.innerHTML ="";
+                    var elem = document.createElement("div");
+                    elem.innerHTML = "<span>" + RESP.name + "</span>";
+                    content.appendChild(elem);
+                    document.write("<b>" + RESP.name + "<b>" + "   " + "<i>" + RESP.main.temp + "</i>");     
+                 }
+             }
+
+  var cities = document.getElementById("cityid");
+  cities.addEventListener ("change", function(){
+    request(cities.value);
+  }, false);
+      
+  </script>           
+
+
+
 
         <hr>
 </div>
+</div>
         <!-- Footer -->
         <footer>
+
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p></p>
                 </div>
             </div>
-            <!-- /.row -->
+          
         </footer>
 
     </div>
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="js/jquery.js"> </script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
