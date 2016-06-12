@@ -51,7 +51,7 @@
             format: 'yyyy/mm/dd',
             startWeek: 0,
 
-            weekArray: ['нед.', 'пон.', 'вівт.', 'сер.', 'чет.', 'пт.', 'суб.'],
+            weekArray: ['нд.', 'пн.', 'вт.', 'ср.', 'чт.', 'пт.', 'сб.'],
             selectedRang: null,
             data: null,
             label: '{d}\n{v}',
