@@ -54,6 +54,15 @@
     border-radius: 4px;
     padding: 5px;
 }
+
+.fb {
+  height: 40px; 
+  float: right; 
+  margin-top: 5px; 
+  margin-bottom: 5px;
+}
+
+
 /* календар*/
 
 .calendar {
