@@ -64,6 +64,16 @@
 
 
 /* календар*/
+   
+    ul, ol, li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    #demo {
+        width: 280px;
+        margin: 0px auto;
+    }
 
 .calendar {
     width: 280px;
