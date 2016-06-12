@@ -16,12 +16,10 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-
     <!-- CSS -->
     <link href="css/blog-post.css" rel="stylesheet">
     <link href="css/mystyle.css" rel="stylesheet" media="screen">  
        
-
      <!--  кнопка -->
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -31,13 +29,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/i18n/defaults-*.min.js"></script>
 
-
      <!-- календар-->
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.js"> </script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/myjs.js"></script>
     
-     <script src="js/myjs.js"></script>
+
+
 </head>
 
 <body>
@@ -116,13 +120,7 @@
             
         
  </div>
- 
-
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
                 <hr>
-
-              
                 <p class="lead">Ця сторінка - шпаргалка для еко-свідомої людини. Тут ти можеш дізнатись як правильно сортувати сміття, та куди це все дівати. А ще ти можеш дізнатись погоду. :)</p>
                 <p>Завітай до наших розділів, не будь байдужим.</p>
                 <p>Насправді все простіше, ніж ти можеш собі уявити.</p>
@@ -175,20 +173,18 @@
                     <h3>Кожен день - ОСОБЛИВИЙ!</h3>
 
 
-                     <div id="demo">
+<div id="demo">
         <div id="ca"></div>
         
-        <div id="dd"></div>
-    </div>
-            <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-            <script src="js/myjs.js"></script>
+          <div id="dd"></div>
+            </div>
+   
             <script>
                 $('#ca').calendar({
                     // view: 'month',
                     width: 280,
                     height: 280,
-                    // startWeek: 0,
-                    // selectedRang: [new Date(), null],
+                
                     data: [
                 {
                   date: '2015/12/24',
@@ -224,21 +220,7 @@
                         console.log('data:' + (data || 'None'));
                     }
                 });
-            </script><script type="text/javascript">
-
-              var _gaq = _gaq || [];
-              _gaq.push(['_setAccount', 'UA-36251023-1']);
-              _gaq.push(['_setDomainName', 'jqueryscript.net']);
-              _gaq.push(['_trackPageview']);
-
-              (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-              })();
-
-            </script>
-                              
+            </script>       
 </div>
 
                 <div class="well well-lg alert-success">
@@ -274,16 +256,7 @@
         </footer>
 <hr>
 
-    </div>
-    <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"> </script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-
+    </div> 
 </body>
 
 </html>

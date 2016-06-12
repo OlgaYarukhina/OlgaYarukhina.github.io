@@ -97,7 +97,7 @@
         ITEM_STYLE = 'style="width:{w}px;height:{h}px;line-height:{h}px"',
         WEEK_ITEM_TPL = '<li ' + ITEM_STYLE + '>{wk}</li>',
         DAY_ITEM_TPL = '<li ' + ITEM_STYLE + ' class="{class}" {action}>{value}</li>',
-        MONTH_ITEM_TPL = '<li ' + ITEM_STYLE + ' ' + ITEM_MONTH + '>{m}月</li>',
+        MONTH_ITEM_TPL = '<li ' + ITEM_STYLE + ' ' + ITEM_MONTH + '>{m} місяць</li>',
 
         TEMPLATE = [
             '<div class="calendar-inner">',
@@ -108,8 +108,8 @@
             '{yyyy}/<span class="m">{mm}</span>',
             '</a>',
             '<div class="calendar-arrow">',
-            '<span class="prev" title="上一月" data-calendar-arrow-date>{prev}</span>',
-            '<span class="next" title="下一月" data-calendar-arrow-date>{next}</span>',
+            '<span class="prev" title="попередній місяць" data-calendar-arrow-date>{prev}</span>',
+            '<span class="next" title="наступний місяць" data-calendar-arrow-date>{next}</span>',
             '</div>',
             '</div>',
             '<div class="calendar-ct">',
@@ -121,17 +121,20 @@
             '<div class="calendar-hd">',
             '<a href="javascript:;" data-calendar-display-month class="calendar-display">{yyyy}</a>',
             '<div class="calendar-arrow">',
-            '<span class="prev" title="上一年" data-calendar-arrow-month>{prev}</span>',
-            '<span class="next" title="下一年" data-calendar-arrow-month>{next}</span>',
+            '<span class="prev" title="попередній рік" data-calendar-arrow-month>{prev}</span>',
+            '<span class="next" title="наступний рік" data-calendar-arrow-month>{next}</span>',
             '</div>',
             '</div>',
             '<ol class="calendar-ct month-items">{month}</ol>',
             '</div>',
             '</div>',
             '</div>',
-            '<div class="calendar-label"><p>HelloWorld</p><i></i></div>'
+            '<div class="calendar-label"><p>OlhaCalendar</p><i></i></div>'
         ],
         OS = Object.prototype.toString;
+
+
+
 
     // utils
 
@@ -766,3 +769,4 @@
     $.fn.calendar.defaults = defaults;
 
 }));
+
